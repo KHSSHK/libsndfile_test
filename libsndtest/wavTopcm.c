@@ -4,10 +4,10 @@ int Wav_to_Pcm(char *wavin, char *filename)
 {
 	SNDFILE *in, *out;
 	SF_INFO sf_info;
-	int infoerr = 0;
+	int		infoerr = 0;
 
-	char *outname = NULL, *pcmname = NULL;
-	short *inData, *outData;
+	char	*outname = NULL, *pcmname = NULL;
+	short	*inData, *outData;
 	
 	FILE *pcm_info; // SF_INFO에서 제공되는 채널, 샘플링 정보등을 저장
 

@@ -53,7 +53,7 @@ static int FileNameSize(char *str)
 
 static void FileName(char *filename, char *str, int namesize)
 {
-	int i;
+	int  i;
 	char tmp;
 
 	for( i = 0 ; i < namesize ; i++)

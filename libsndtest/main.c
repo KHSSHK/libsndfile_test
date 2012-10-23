@@ -2,8 +2,8 @@
 
 int main(int argc, char **argv)
 {
-	char *inname; // 파일명
-	int ch, samplerate;
+	char  *inname; // 파일명
+	int   ch, samplerate;
 
 	if(argc == 4)
 	{

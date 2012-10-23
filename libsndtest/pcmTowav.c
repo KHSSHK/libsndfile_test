@@ -4,7 +4,7 @@ int Pcm_to_Wav(char *pcmin, char *filename, int ch, int samplerate)
 {
 	SNDFILE *in, *out;
 	SF_INFO sf_info;
-	int infoerr = 0;
+	int		infoerr = 0;
 
 	char *outname = NULL, *wavname = NULL;
 	short *inData, *outData;
