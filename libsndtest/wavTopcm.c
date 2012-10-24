@@ -9,7 +9,7 @@ int Wav_to_Pcm(char *wavin, char *filename)
 	char	*outname = NULL, *pcmname = NULL;
 	short	*inData, *outData;
 	
-	FILE *pcm_info; // SF_INFO에서 제공되는 채널, 샘플링 정보등을 저장
+	FILE	*pcm_info; // SF_INFO에서 제공되는 채널, 샘플링 정보등을 저장
 
 	int i;
 

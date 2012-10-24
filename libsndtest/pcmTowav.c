@@ -6,8 +6,8 @@ int Pcm_to_Wav(char *pcmin, char *filename, int ch, int samplerate)
 	SF_INFO sf_info;
 	int		infoerr = 0;
 
-	char *outname = NULL, *wavname = NULL;
-	short *inData, *outData;
+	char	*outname = NULL, *wavname = NULL;
+	short	*inData, *outData;
 
 	int i;
 
