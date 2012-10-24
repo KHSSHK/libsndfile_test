@@ -20,8 +20,8 @@ int main(int argc, char **argv)
 	else
 	{
 		printf("Usage\n");
-		printf("PCM > WAV : libsndtest 숫자(ch) 숫자(Samplerate) 입력파일명\n");
-		printf("WAV > PCM : libsndtest 입력파일명\n");
+		printf("PCM > WAV : libsndtest (ch) (Samplerate) (file name).pcm\n");
+		printf("WAV > PCM : libsndtest (file name).wav\n");
 		system("PAUSE");
 		return -3;
 	}
