@@ -8,7 +8,7 @@ int Wav_to_Pcm(char *wavin, char *filename)
 
 	char	*outname = NULL, *pcmname = NULL;
 	short	*inData, *outData;
-	
+
 	FILE	*pcm_info; // SF_INFO에서 제공되는 채널, 샘플링 정보등을 저장
 
 	int i;
@@ -37,10 +37,10 @@ int Wav_to_Pcm(char *wavin, char *filename)
 		system("PAUSE");
 		return -2;
 	}
-	
+
 	/* WAV INFO -> PCM INFO */	
 	sf_info.format	= 0X00040002; // main format :raw pcm, subformat: pcm16
-	
+
 	out = sf_open(outname, SFM_WRITE, &sf_info);
 	if(out == NULL)
 	{
@@ -50,10 +50,10 @@ int Wav_to_Pcm(char *wavin, char *filename)
 		sf_close(in);
 		return -1;
 	}
-	
+
 	inData = (short *)malloc(sizeof(short)*NUM);
 	outData = (short *)malloc(sizeof(short)*NUM);
-	
+
 	while(sf_read_short(in, inData, NUM) == NUM)
 	{
 		for(i = 0; i < NUM; i++)
@@ -63,7 +63,7 @@ int Wav_to_Pcm(char *wavin, char *filename)
 
 		sf_write_short(out, outData, NUM);
 	}
-	
+
 	sf_close(out);
 	sf_close(in);
 	free(outData);
@@ -88,7 +88,7 @@ int Wav_to_Pcm(char *wavin, char *filename)
 		fprintf(pcm_info, "%s's INFORMATION\n\n", filename);
 		fprintf(pcm_info, "Channels     = %d\n", sf_info.channels);
 		fprintf(pcm_info, "Samplerate   = %d\n", sf_info.samplerate);
-				
+
 		fclose(pcm_info);
 		free(pcmname);
 	}

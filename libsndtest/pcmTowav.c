@@ -42,12 +42,12 @@ int Pcm_to_Wav(char *pcmin, char *filename, int ch, int samplerate)
 		system("PAUSE");
 		return -2;
 	}
-	
+
 	/* PCM INFO -> WAV INFO */	
 	sf_info.format	= 0x00010002; // main format :wav, subformat: pcm16
-	
+
 	out = sf_open(wavname, SFM_WRITE, &sf_info);
-	
+
 	if(out == NULL)
 	{
 		printf("%s\n", sf_strerror(out));
@@ -56,8 +56,8 @@ int Pcm_to_Wav(char *pcmin, char *filename, int ch, int samplerate)
 		sf_close(in);
 		return -1;
 	}
-	
-	
+
+
 	inData = (short *)malloc(sizeof(short)*NUM);
 	outData = (short *)malloc(sizeof(short)*NUM);
 
@@ -68,7 +68,7 @@ int Pcm_to_Wav(char *pcmin, char *filename, int ch, int samplerate)
 			outData[i] = inData[i];
 		}
 
-			sf_write_short(out, outData, NUM);	
+		sf_write_short(out, outData, NUM);	
 	}
 
 	sf_close(out);
@@ -76,7 +76,7 @@ int Pcm_to_Wav(char *pcmin, char *filename, int ch, int samplerate)
 	free(inData);
 	free(outData);
 	free(outname);
-	
+
 
 	return 0;
 }
